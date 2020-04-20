@@ -1,0 +1,14 @@
+@media (max-width: 1055px) and (min-width: 340px) {
+  .home-img {
+    height: 100%;
+    width: auto;
+    top: -40px;
+    left: -342px;
+  }
+}
+
+@media (max-width: 650px) and (min-width: 340px) {
+  .nav-container {
+    position: absolute;
+  }
+}
