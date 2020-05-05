@@ -96,8 +96,12 @@ function showHome() {
     } else if (i >= 0.5 || i <= 1.0) {
       homeMedia.style.top = '0px';
       carousel.style.width = '90%';
-      carousel.style.height = '600px';
       caroDots.style.opacity = '1';
+      if (wWidth <= 500) {
+        carousel.style.height = '400px';
+      } else {
+        carousel.style.height = '600px';
+      }
     }
   }
 
