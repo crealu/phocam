@@ -144,8 +144,8 @@ function checkViewport() {
     /*for (var ht = 0; ht < homeTog.length; ht++) {
       homeTog[ht].style.left = homeTogLeft;
     }*/
-    homeTog[0].style.left = homeTogLeft;
-    homeTog[4].style.left = homeTogLeft;
+    //homeTog[0].style.left = homeTogLeft;
+    //homeTog[4].style.left = homeTogLeft;
     for (var ht = 0; ht < homeTog.length; ht++) {
       homeTog[ht].style.height = '100%';
       homeTog[ht].style.width = 'auto';
