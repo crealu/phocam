@@ -13,6 +13,8 @@ body {
   color: #868686;
   opacity: 1;
   margin: 0;
+  padding: 0px;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
 }
