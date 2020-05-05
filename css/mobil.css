@@ -75,7 +75,9 @@
   .gallery-title {
     font-size: 14px;
     bottom: 0%;
-    top: 40%;
+    top: 70%;
+    left: 0%;
+    right: 0%;
     text-align: center;
     padding-right: 0px;
   }
