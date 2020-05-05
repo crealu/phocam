@@ -99,6 +99,7 @@ function showHome() {
       caroDots.style.opacity = '1';
       if (wWidth <= 500) {
         carousel.style.height = '400px';
+        homeMedia.style.height = '500px';
       } else {
         carousel.style.height = '600px';
       }
@@ -125,6 +126,7 @@ function viewHomeImg(dot) {
     homeImgs[h].style.animation = 'none';
   }
 
+  homeImgs[dot].style.zIndex = '41';
   homeImgs[dot].style.opacity = '1';
   allDots[dot].style.background = '#6d6d6d';
 }
