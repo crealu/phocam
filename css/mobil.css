@@ -1,4 +1,8 @@
 @media (max-width: 1000px) and (min-width: 300px) {
+  .opening-wrapper {
+    top: 100px;
+  }
+
   .opening-logo-wrapper {
     transform: scale(0.75);
   }
@@ -29,6 +33,7 @@
     animation: 10s linear 3.5s forwards slow_pan_scaled;
     height: 100%;
     width: auto;
+    left: 0px;
   }
 
   #caro-2 {
