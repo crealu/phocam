@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Photaero</title>
+	<title>Phocam</title>
 	<link rel="icon" type="image/png" sizes="310x310" href="img/logo-310x310.png">
   <link href="css/camstrap.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
@@ -13,12 +13,35 @@
 <body>
 	<div class="nav-container">
 		<div class="nav-logo-wrapper">
-			<img class="nav-logo" src="img/phocam logo white.svg"/>
+			<a href="">
+				<img class="nav-logo" src="img/phocam logo.svg"/>
+				<p class="phocam-nav-text">phocam</p>
+			</a>
 		</div>
 		<div id="nav-btn" onclick="mobileMenu()">
 			<div class="bar bar1"></div>
 			<div class="bar bar2"></div>
 			<div class='bar bar3'></div>
+		</div>
+	</div>
+
+	<div class="home-media-wrapper">
+		<div class="home-carousel-wrapper">
+			<img id="caro-1" class="home-img-tog" src="img/photos/whole pier.jpg"/>
+			<img id="caro-2" class="wait-img home-img-tog" src="img/photos/mirror set.jpg"/>
+			<img id="caro-3" class="wait-img home-img-tog" src="img/photos/west shinjuku.jpg"/>
+			<img id="caro-4" class="wait-img home-img-tog" src="img/photos/kawaguchiko full.jpg"/>
+			<img id="caro-5" class="wait-img home-img-tog" src="img/photos/berkeley.jpg"/>
+		</div>
+
+		<div class="home-carousel-dots">
+			<ul class="dots-list">
+				<li class="caro-dot active-dot" data-dotnum="0" onclick="viewHomeImg(0)"></li>
+				<li class="caro-dot" data-dotnum="1" onclick="viewHomeImg(1)"></li>
+				<li class="caro-dot" data-dotnum="2" onclick="viewHomeImg(2)"></li>
+				<li class="caro-dot" data-dotnum="3" onclick="viewHomeImg(3)"></li>
+				<li class="caro-dot" data-dotnum="4" onclick="viewHomeImg(4)"></li>
+			</ul>
 		</div>
 	</div>
 
@@ -38,27 +61,24 @@
 		<div class="opening-text-wrapper">
 			<p class="phocam-text">PHOCAM</p>
 		</div>
-		<div class="click-arrow-wrapper">
-			<img class="click-arrow" src="img/down arrow.svg" onclick="showHome()"/>
+		<div class="click-arrow-wrapper" onclick="showHome()">
+			<img class="click-arrow" src="img/down arrow.svg"/>
 		</div>
 	</div>
 
-	<div class="home-media-wrapper">
-		<img class="home-img" src="img/photos/whole pier.jpg"/>
-	</div>
 	<div id="nav-mobile">
 		<ul class="nav-list-mobile">
 			<li class="nav-item-mobile selector">
 				<a class="nav-link-mobile"  onclick="displayContent('About')">About</a>
 			</li>
 			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile" onclick="displayContent('Services')">Services</a>
-			</li>
-			<li class="nav-item-mobile selector">
 				<a class="nav-link-mobile" onclick="displayContent('Gallery')">Gallery</a>
 			</li>
 			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile" onclick="displayContent('Showreel')">Showreel</a>
+				<a class="nav-link-mobile" onclick="displayContent('Services')">Services</a>
+			</li>
+			<li class="nav-item-mobile selector">
+				<a class="nav-link-mobile" onclick="displayContent('Contact')">Contact</a>
 			</li>
 			<li class="nav-item-mobile">
 				<ul class="media-list">
@@ -71,6 +91,124 @@
 			</li>
 		</ul>
 	</div>
+
+	<div class="topic-content" id="about-content">
+		<h3 class="topic-title">Phocam</h3>
+		<div class="about-para-wrapper">
+			<p class="about-para">Expression through photography and videography.<br>
+				Originally started as a photojournalism project for aerial photography in 2017, Phocam (previously Photaero) has developed into a brand that focuses on visual arts and content creation.
+				Cinematography becomes the theme of video projects that incorporate in-house music pieces. Various photography styles like portrait, night, and architecture are areas of growing expertise.
+				As these works satisfy our creative drive, the primary goal of Phocam is to share interesting ideas and collaborate on creative projects.
+				It is a brand that ultimately seeks to provide value to collaborators, and perspective through visual art.
+			</p>
+		</div>
+	</div>
+
+	<div class="topic-content" id="gallery-content">
+		<h3 class="topic-title">Gallery</h3>
+		<div class="gallery-row">
+			<div class="gallery-img-wrapper">
+				<img class="gallery-main-img" id="aerial-main" data-name="biz" src="img/photos/gallerymain/nagatoro.jpg"/>
+				<p class="gallery-title">Aerial</p>
+			</div>
+		</div>
+		<div class="gallery-row">
+			<div class="gallery-img-wrapper">
+				<img class="gallery-main-img" id="architecture-main" data-name="cork-house" src="img/photos/gallerymain/cork.jpg"/>
+				<p class="gallery-title">Architecture</p>
+			</div>
+		</div>
+		<div class="gallery-row">
+			<div class="gallery-img-wrapper">
+				<img class="gallery-main-img" id="portrait-main" data-name="chin" src="img/photos/gallerymain/marcin.jpg"/>
+				<p class="gallery-title">Portrait</p>
+			</div>
+		</div>
+		<div class="gallery-row">
+			<div class="gallery-img-wrapper">
+				<img class="gallery-main-img" id="night-main" data-name="moon" src="img/photos/gallerymain/moon.jpg"/>
+				<p class="gallery-title">Night</p>
+			</div>
+		</div>
+		<div class="gallery-row">
+			<div class="gallery-img-wrapper">
+				<img class="gallery-main-img" id="landscape-main" data-name="nikko" src="img/photos/gallerymain/nikko.jpg"/>
+				<p class="gallery-title">Landscape</p>
+			</div>
+		</div>
+		<div class="gallery-row">
+			<div class="gallery-img-wrapper">
+				<img class="gallery-main-img" id="longexposure-main" data-name="yoyogi" src="img/photos/gallerymain/yoyogi.jpg"/>
+				<p class="gallery-title">Long Exposure</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="topic-content" id="services-content">
+		<h3 class="topic-title">Services</h3>
+		<div class="services-wrapper">
+			<div class="services-left s-col">
+				<ul class="services-list">
+					<li class="services-item">High Resolution Photos</li>
+					<li class="services-item">Portrait Photography</li>
+					<li class="services-item">Aerial Photography</li>
+					<li class="services-item">Post Production</li>
+					<li class="services-item">High Quality 4k Video</li>
+					<li class="services-item">Video Editing</li>
+				</ul>
+			</div>
+			<div class="services-middle s-col">
+				<ul class="services-list">
+					<li class="services-item">Creative Direction</li>
+					<li class="services-item">Content Creation</li>
+					<li class="services-item">Content Writing</li>
+					<li class="services-item">Music Composition</li>
+					<li class="services-item">Custom Graphics</li>
+					<li class="services-item">Digital Media</li>
+				</ul>
+			</div>
+			<div class="services-right s-col">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="topic-content" id="footer">
+		<div class="footer-inner">
+			<div class="footer-col">
+				<div class="footer-logo-wrapper">
+					<img class="footer-logo" src="img/phocam logo white.svg"/>
+					<p class="footer-phocam">PHOCAM</p>
+				</div>
+			</div>
+			<div class="footer-col">
+				<ul class="footer-info-list">
+					<li class="info-item">About</li>
+					<li class="info-item">Gallery</li>
+					<li class="info-item">Services</li>
+					<li class="info-item">Contact</li>
+				</ul>
+			</div>
+			<div class="footer-col final-footer-col">
+				<div class="media-connect">
+					<h3 class="media-connect-title">Connect</h3>
+					<a href="https://www.instagram.com/phocamm/" target="_blank" class="ig-link">
+						<img src="https://s-media-cache-ak0.pinimg.com/originals/e9/5e/3b/e95e3b25509d467e5698290b1427135d.png" alt="ig-logo" class="ig-img"/>
+					</a>
+				</div>
+				<div class="language-select">
+					<ul class="language-list">
+						<li class="lang-item">JP /</li>
+						<li class="lang-item">EN</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
 
 <!--
 	<div id="about-content" class="topic-content">

@@ -1,14 +1,115 @@
-@media (max-width: 1055px) and (min-width: 340px) {
-  .home-img {
+@media (max-width: 1000px) and (min-width: 300px) {
+  .home-img-tog {
     height: 100%;
     width: auto;
-    top: -40px;
-    left: -342px;
+    transform: scale(1.1);
+    animation:
+    top: -20px;
+  }
+
+  #caro-1 {
+    animation: 10s linear 3.5s forwards slow_pan_scaled;
+    height: 100%;
+    width: auto;
+  }
+
+  #caro-2 {
+    height: 100%;
+    width: auto;
+  }
+
+  #caro-3 {
+    height: 100%;
+    width: auto;
+  }
+
+  #caro-4 {
+    height: 100%;
+    width: auto;
+  }
+
+  #caro-5 {
+    height: 100%;
+    width: auto;
+  }
+
+  .about-para {
+    width: 100%;
+    line-height: 35px;
+    font-size: 16px;
+  }
+
+  .services-wrapper {
+    height: 400px;
+  }
+
+  .s-col {
+    width: 50%;
+  }
+
+  .services-item {
+    height: 30px;
+    font-size: 14px;
+  }
+
+  #footer {
+    height: 500px;
+  }
+
+  .footer-col {
+    width: 50%;
+  }
+
+  .final-footer-col {
+    width: 100%;
+  }
+
+  .footer-logo {
+    width: 100px;
+  }
+
+  .footer-info-list {
+    margin: 0px;
+    width: 100%;
+  }
+
+  .media-connect-title {
+    padding-top: 50px;
+    font-size: 20px;
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  .ig-link {
+    margin: 0 auto;
+    padding-left: 0px;
+  }
+
+  .language-list {
+    position: relative;
+    display: block;
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 650px) and (min-width: 340px) {
-  .nav-container {
-    position: absolute;
+@media (max-width: 1065px) and (min-width: 900px) {
+  .gallery-row {
+    height: 400px;
+  }
+
+  .gallery-main-img {
+    top: 0px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .gallery-row {
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) and (min-width: 300px) {
+  .gallery-row {
+    height: 200px;
   }
 }
