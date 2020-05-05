@@ -141,12 +141,19 @@ function checkViewport() {
   if (wWidth <= 1000 && wWidth >= 250) {
     let calculation = Math.abs( (wWidth - 1055) / 2.1 );
     let homeTogLeft = '-' + 0 + calculation + 'px';
-    for (var ht = 0; ht < homeTog.length; ht++) {
+    /*for (var ht = 0; ht < homeTog.length; ht++) {
       homeTog[ht].style.left = homeTogLeft;
+    }*/
+    homeTog[0].style.left = homeTogLeft;
+    homeTog[4].style.left = homeTogLeft;
+    for (var ht = 0; ht < homeTog.length; ht++) {
+      homeTog[ht].style.height = '100%';
+      homeTog[ht].style.width = 'auto';
     }
   } else if (wWidth >= 1000) {
     for (var ht = 0; ht < homeTog.length; ht++) {
       homeTog[ht].style.width = '100%';
+      homeTog[ht].style.height = 'auto';
     }
   }
 

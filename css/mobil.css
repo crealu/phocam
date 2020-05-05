@@ -1,4 +1,22 @@
 @media (max-width: 1000px) and (min-width: 300px) {
+  .opening-logo-wrapper {
+    transform: scale(0.75);
+  }
+
+  .opening-text-wrapper {
+    font-size: 14px;
+  }
+
+  .click-arrow-wrapper {
+    width: 40px;
+    height: 40px;
+    top: 50px;
+  }
+
+  .click-arrow {
+    top: 15px;
+  }
+
   .home-img-tog {
     height: 100%;
     width: auto;
@@ -33,10 +51,24 @@
     width: auto;
   }
 
+  .topic-title {
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+
   .about-para {
     width: 100%;
     line-height: 35px;
     font-size: 16px;
+  }
+
+  .gallery-main-img {
+    top: 0px;
+  }
+
+  .gallery-title {
+    font-size: 16px;
+    padding-right: 20px;
   }
 
   .services-wrapper {
@@ -44,7 +76,7 @@
   }
 
   .s-col {
-    width: 50%;
+    width: 100%;
   }
 
   .services-item {
@@ -96,10 +128,6 @@
   .gallery-row {
     height: 400px;
   }
-
-  .gallery-main-img {
-    top: 0px;
-  }
 }
 
 @media (max-width: 900px) and (min-width: 600px) {
@@ -110,6 +138,6 @@
 
 @media (max-width: 600px) and (min-width: 300px) {
   .gallery-row {
-    height: 200px;
+    height: 150px;
   }
 }
