@@ -147,6 +147,7 @@ function checkViewport() {
   if (wWidth <= 1000 && wWidth >= 250) {
     let calculation = Math.abs( (wWidth - 1055) / 2.1 );
     let homeTogLeft = '-' + 0 + calculation + 'px';
+
     /*for (var ht = 0; ht < homeTog.length; ht++) {
       homeTog[ht].style.left = homeTogLeft;
     }*/
@@ -155,6 +156,10 @@ function checkViewport() {
     for (var ht = 0; ht < homeTog.length; ht++) {
       homeTog[ht].style.height = '100%';
       homeTog[ht].style.width = 'auto';
+    }
+    if (wWidth <= 500) {
+      doc.gebi('caro-1').style.left = '-100px';
+      doc.gebi('caro-4').style.left = '-100px';
     }
   } else if (wWidth >= 1000) {
     for (var ht = 0; ht < homeTog.length; ht++) {
