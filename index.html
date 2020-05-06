@@ -107,37 +107,37 @@
 	<div class="topic-content" id="gallery-content">
 		<h3 class="topic-title">Gallery</h3>
 		<div class="gallery-row">
-			<div class="gallery-img-wrapper">
+			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
 				<img class="gallery-main-img" id="aerial-main" data-name="biz" src="img/photos/gallerymain/nagatoro.jpg"/>
 				<p class="gallery-title">Aerial</p>
 			</div>
 		</div>
 		<div class="gallery-row">
-			<div class="gallery-img-wrapper">
+			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
 				<img class="gallery-main-img" id="architecture-main" data-name="cork-house" src="img/photos/gallerymain/cork.jpg"/>
 				<p class="gallery-title">Architecture</p>
 			</div>
 		</div>
 		<div class="gallery-row">
-			<div class="gallery-img-wrapper">
+			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
 				<img class="gallery-main-img" id="portrait-main" data-name="chin" src="img/photos/gallerymain/marcin.jpg"/>
 				<p class="gallery-title">Portrait</p>
 			</div>
 		</div>
 		<div class="gallery-row">
-			<div class="gallery-img-wrapper">
+			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
 				<img class="gallery-main-img" id="night-main" data-name="moon" src="img/photos/gallerymain/moon.jpg"/>
 				<p class="gallery-title">Night</p>
 			</div>
 		</div>
 		<div class="gallery-row">
-			<div class="gallery-img-wrapper">
+			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
 				<img class="gallery-main-img" id="landscape-main" data-name="nikko" src="img/photos/gallerymain/nikko.jpg"/>
 				<p class="gallery-title">Landscape</p>
 			</div>
 		</div>
 		<div class="gallery-row">
-			<div class="gallery-img-wrapper">
+			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
 				<img class="gallery-main-img" id="longexposure-main" data-name="yoyogi" src="img/photos/gallerymain/yoyogi.jpg"/>
 				<p class="gallery-title">Long Exposure</p>
 			</div>
@@ -206,184 +206,19 @@
 		</div>
 	</div>
 
-
-
-
-
-<!--
-	<div id="about-content" class="topic-content">
-		<div class="row project-background">
-			<div class="col col-12">
-				<div class="project-text-wrapper">
-					<h3 class="project-title">Mission</h3>
-					<p class="project-text">Phocam strives to provide a creative approach to content creation and imaging solutions. We lend our services to a variety of industries; film, travel & tourism, engineering, media, real estate.</p>
-				</div>
+	<div class="gallery-modal" id="modal">
+		<button id="close" onclick="closeModal()">X</button>
+		<div id="modal-inner">
+			<h3 class="modal-title"></h3>
+			<div class="modal-img-wrapper">
+				<img class="modal-img" src=""/>
 			</div>
-		</div>
-		<div class="row project-background">
-			<div class="col col-12">
-				<div class="project-text-wrapper">
-					<h3 class="project-title">Personnel</h3>
-					<p class="project-text">Cameron Miller, Photographer and Remote Pilot</p>
-					<img src="img/campersonnel.jpg" id="cam-about"/>
-				</div>
+			<div class="modal-text-wrapper">
+				<p class="modal-text"></p>
 			</div>
 		</div>
 	</div>
 
-	<div id="services-content" class="topic-content">
-    <div class="row project-background">
-      <div class="col col-12">
-        <div class="project-text-wrapper">
-          <h3 class="project-title">High Resolution Imaging</h3>
-          <p class="project-text">Photographs and images captured at a high resolution.</p>
-        </div>
-      </div>
-    </div>
-		<div class="row project-background">
-      <div class="col col-12">
-        <div class="project-text-wrapper">
-          <h3 class="project-title">Aerial Photo & Video</h3>
-          <p class="project-text">Aerial perspectives imaged from angles in the sky.</p>
-        </div>
-      </div>
-    </div>
-		<div class="row project-background">
-      <div class="col col-12">
-        <div class="project-text-wrapper">
-          <h3 class="project-title">Post Production</h3>
-          <p class="project-text">Quality edits produced using industry standard software.</p>
-        </div>
-      </div>
-    </div>
-		<div class="row project-background">
-      <div class="col col-12">
-        <div class="project-text-wrapper">
-          <h3 class="project-title">Video Editing</h3>
-          <p class="project-text">Custom reels crafted with a unique touch.</p>
-        </div>
-      </div>
-    </div>
-		<div class="row project-background">
-      <div class="col col-12">
-        <div class="project-text-wrapper">
-          <h3 class="project-title">Custom Graphics</h3>
-          <p class="project-text">Content stylized to fit your theme.</p>
-        </div>
-      </div>
-    </div>
-		<div class="row project-background">
-			<div class="col col-12">
-				<div class="project-text-wrapper">
-					<h3 class="project-title">Web Presence</h3>
-					<p class="project-text">Stylize your content with custom graphics.</p>
-				</div>
-			</div>
-		</div>
-  </div>
-
-	<div id="photo-content" class="topic-content">
-    <div class="row project-background-p">
-      <div class="col col-12">
-        <div class="project-text-wrapper">
-					<h3 class="project-title">Architecture</h3>
-					<img src="img/cathedral.jpg" class="project-img-u"/>
-          <p class="project-text">View gallery</p>
-        </div>
-      </div>
-    </div>
-		<div class="row project-background-p">
-      <div class="col col-12">
-        <div class="project-text-wrapper">
-					<h3 class="project-title">Landscape</h3>
-					<img src="http://www.cmmportfolio.com/img/photos/aerial/marin%20headlands.jpg" class="project-img-u">
-          <p class="project-text">View gallery</p>
-        </div>
-      </div>
-    </div>
-		<div class="row project-background-p">
-      <div class="col col-12">
-        <div class="project-text-wrapper">
-					<h3 class="project-title">Overview</h3>
-					<img src="http://www.cmmportfolio.com/img/photos/aerial/san%20juan.jpg" class="project-img-u">
-          <p class="project-text">View gallery</p>
-        </div>
-      </div>
-    </div>
-		<div class="row project-background-p">
-      <div class="col col-12">
-        <div class="project-text-wrapper">
-					<h3 class="project-title">Nature</h3>
-					<img src="http://www.cmmportfolio.com/img/photos/aerial/latourell%20falls.jpg" class="project-img-u">
-          <p class="project-text">View gallery</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-	<div id="video-content" class="topic-content">
-		<div class="row project-background-p">
-			<div class="col col-12">
-				<div class="project-text-wrapper">
-					<h3 class="project-title">VW Mock Commercial</h3>
-					<video class="project-video" controls="">
-						<source type="video/mp4" src="http://www.cmmportfolio.com/img/videos/vbust2.mp4">
-					</video>
-				</div>
-			</div>
-		</div>
-		<div class="row project-background-p">
-			<div class="col col-12">
-				<div class="project-text-wrapper">
-					<h3 class="project-title">Venice Sunset</h3>
-					<video class="project-video" controls="">
-						<source type="video/mp4" src="">
-					</video>
-				</div>
-			</div>
-		</div>
-		<div class="row project-background-p">
-			<div class="col col-12">
-				<div class="project-text-wrapper">
-					<h3 class="project-title">Properties</h3>
-					<video class="project-video" controls="">
-						<source type="video/mp4" src="">
-					</video>
-				</div>
-			</div>
-		</div>
-		<div class="row project-background-p">
-			<div class="col col-12">
-				<div class="project-text-wrapper">
-					<h3 class="project-title">Waterfalls</h3>
-					<video class="project-video" controls="">
-						<source type="video/mp4" src="">
-					</video>
-				</div>
-			</div>
-		</div>
-		<div class="row project-background-p">
-			<div class="col col-12">
-				<div class="project-text-wrapper">
-					<h3 class="project-title">Millerfest</h3>
-					<video class="project-video" controls="">
-						<source type="video/mp4" src="">
-					</video>
-				</div>
-			</div>
-		</div>
-		<div class="row project-background-p">
-			<div class="col col-12">
-				<div class="project-text-wrapper">
-					<h3 class="project-title">Gloomy Day Palette</h3>
-					<video class="project-video" controls="">
-						<source type="video/mp4" src="https://youtu.be/78gaqQMWiOI">
-					</video>
-				</div>
-			</div>
-		</div>
-  </div>
--->
 	<script type="text/javascript" src="js/help.js"></script>
   <script type="text/javascript" src="js/phocam.js"></script>
 </body>

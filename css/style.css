@@ -80,6 +80,71 @@ body {
   transition: 0.5s;
 }
 
+#nav-mobile {
+  position: absolute;
+  display: none;
+  left: 0%;
+  transition: 0.25s ease;
+  width: 100%;
+  height: 800px;
+  background: white;
+}
+
+.nav-list-mobile {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 0px;
+  transition: 1s;
+  background: white;
+  transition: 0.5s;
+  text-align: center;
+  top: 50px;
+  padding-inline-start: 0px;
+}
+
+.nav-item-mobile {
+  list-style-type: none;
+  padding: 26px 0px 26px 0px;
+  border-top: 1px solid rgba(134, 134, 134, 0.5);
+  width: 50%;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.selector {
+  width: 70%;
+}
+
+.nav-link-mobile {
+  color: #868686;
+  padding: 4px;
+  font-weight: 100;
+  font-size: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+.media-list {
+  list-style-type: none;
+  padding: 0px;
+  width: 90%;
+  left: 0px;
+  position: relative;
+  padding-inline-start: 0px;
+  display: block;
+  margin: 0 auto;
+}
+
+.media-list li {
+  display: inline-block;
+  position: relative;
+  width: 16%;
+  padding: 0px 1% 0px 1%;
+  text-align: center;
+}
+
 .opening-wrapper {
   position: absolute;
   top: 200px;
@@ -669,164 +734,68 @@ body {
   display: inline-block;
 }
 
-/* old below this */
-.prior-content {
+#modal {
   display: none;
-}
-
-.home-video {
-  width: 100%;
-  height: auto;
-  position: relative;
-  display: block;
-  margin: 0 auto;
-}
-
-.home-logo-wrapper {
-  padding-left: 30px;
-}
-
-.home-logo {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  float: left;
-  width: 125px;
-}
-
-#nav-mobile {
-  position: absolute;
-  display: none;
-  opacity: 0;
+  position: fixed;
+  top: 0%;
   left: 0%;
-  top: -18px;
-  transition: 0.5s ease;
   width: 100%;
-  height: 760px;
+  height: 100%;
   background: white;
-  z-index: 100;
-}
-
-.nav-list-mobile {
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
-  padding-left: 0px;
-  transition: 1s;
-  background: white;
+  color: #535353;
+  z-index: 150;
+  overflow-x: scroll;
+  transform: scale(0);
+  transition-delay: 0.25s;
   transition: 0.5s;
-  text-align: center;
-  top: 50px;
-  padding-inline-start: 0px;
 }
 
-.nav-item-mobile {
-  list-style-type: none;
-  padding: 26px 0px 26px 0px;
-  border-top: 1px solid #868686;
-  width: 75%;
-  position: relative;
+#close {
+  position: absolute;
   display: block;
-  margin: 0 auto;
-}
-
-.selector {
-  width: 70%;
-}
-
-.nav-link-mobile {
-  color: #868686;
-  padding: 4px;
-  font-weight: 100;
-  font-size: 24px;
-  position: relative;
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  right: 0%;
+  margin-right: 5%;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  color: #535353;
+  background: #dedede;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px #5d5d5d;
   cursor: pointer;
+  z-index: 200;
 }
 
-.media-list {
-  list-style-type: none;
-  padding: 0px;
-  width: 90%;
-  left: 0px;
+#modal-inner {
   position: relative;
-  padding-inline-start: 0px;
   display: block;
   margin: 0 auto;
+  top: 0px;
+  width: 95%;
 }
 
-.media-list li {
-  display: inline-block;
-  position: relative;
-  width: 16%;
-  padding: 0px 1% 0px 1%;
+.modal-title {
   text-align: center;
+  margin-top: 50px;
 }
 
-.social-img {
-  width: 45px;
+.modal-text-wrapper {
+  padding-top: 30px;
+  text-align: justify;
 }
 
-/* home content */
-.home-content {
-  position: relative;
-  color: white;
-  top: 300px;
-}
-
-.home-col {
-  position: relative;
-  display: inline-block;
-  float: left;
-  width: 45%;
-  padding: 0px 2.5% 0px 2.5%;
-}
-
-.home-col-1 {
-  width: 25%;
-  padding: 0px 5% 0px 0px;
-}
-
-.home-col-2 {
-  width: 65%;
-  padding: 0px 2.5% 0px 2.5%;
-  top: 40px;
-}
-
-.home-nav-list {
-  position: relative;
-  display: block;
-  list-style-type: none;
-  padding-left: 0px;
+.modal-img {
   width: 100%;
-}
-
-.home-nav-item {
   position: relative;
-  display: inline-block;
-  padding: 0px 0px 0px 10%;
-  cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
 
-.home-left-bar {
-  position: relative;
-  float: left;
-  width: 1px;
-  background: white;
-  transition: 0.5s ease;
-  height: 1px;
-  opacity: 0;
-}
-
-.home-nav-text {
-  position: relative;
-  float: left;
-  margin: 0px;
-  padding-left: 10px;
-  letter-spacing: 2px;
-  font-size: 40px;
-}
-
-.home-nav-item:hover .home-left-bar {
-  height: 40px;
-  opacity: 1;
+.modal {
+  background-color: #353535;
+  transform: scale(0);
+  transition: 0.5s;
 }

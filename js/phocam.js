@@ -105,15 +105,6 @@ function showHome() {
       }
     }
   }
-
-
-  /*
-  let topNav = doc.gebcn('nav-container')[0];
-  topNav.style.top = '0px';
-
-  let arrowBtn = doc.gebcn('click-arrow-wrapper')[0];
-  arrowBtn.style.display = 'none';
-  */
 }
 
 function viewHomeImg(dot) {
@@ -189,6 +180,40 @@ function lazyLoadHomeImgs() {
       waitImg[3].style.display = 'block';
     }
   }
+}
+
+function galleryModal(subgal) {
+  let modal = doc.gebi('modal');
+  let img = subgal.children[0];
+  let title = subgal.children[1];
+  let para = img.id.replace('-main', '');
+  console.log(para);
+
+  let modTitle = doc.gebcn('modal-title')[0];
+  doc.clear(modTitle);
+  modTitle.innerHTML = title.textContent;
+
+  let modImg = doc.gebcn('modal-img')[0];
+  modImg.src = img.src;
+
+  let galleryTexts = {
+    aerial: 'A sky as a canvas of viewpoints. Equiped with a DJI Mavic Pro, I enjoy capturing unique angles unable to be seen by the human eye.',
+    architecture: 'The shape and design of buildings has always subtly captured my interest. Viewing urban infrastructure through photography sheds light on the various styles of architecture that I find intriguing.',
+    portrait: 'People and photography is a combination in which I have only recently started to explore. The moment seems to be simultaneously fleeting and revealing itself.',
+    night: 'Walking in the shadows, light is clearly visible. Features of my perspectives on the night include city lights, contrast, and the moon (thanks to a 210mm lens).',
+    landscape: "As an adventurer, I view landscapes as sometimes having the ability to present an all-encompassing view. Whether that be physical, interpretive, or both, is up to the viewer.",
+    longexposure: 'Is light that the human eye can never naturally see ever actually seen? What I love about shooting long exposure is that it has more to do with imagination than what meets the eye.'
+  }
+
+  let modText = doc.gebcn('modal-text')[0];
+  modText.innerHTML =  galleryTexts[para];
+
+  delayZoomShow(modal);
+}
+
+function closeModal() {
+  let modal = doc.gebi('modal');
+  modal.style.transform = 'scale(0)';
 }
 
 window.addEventListener('resize', checkViewport);
