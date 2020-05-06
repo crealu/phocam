@@ -148,18 +148,18 @@ function checkViewport() {
     let calculation = Math.abs( (wWidth - 1055) / 2.1 );
     let homeTogLeft = '-' + 0 + calculation + 'px';
 
-    /*for (var ht = 0; ht < homeTog.length; ht++) {
-      homeTog[ht].style.left = homeTogLeft;
-    }*/
-    //homeTog[0].style.left = homeTogLeft;
-    //homeTog[4].style.left = homeTogLeft;
     for (var ht = 0; ht < homeTog.length; ht++) {
       homeTog[ht].style.height = '100%';
       homeTog[ht].style.width = 'auto';
     }
-    if (wWidth <= 500) {
-      doc.gebi('caro-1').style.left = '-100px';
-      doc.gebi('caro-4').style.left = '-100px';
+
+    let leftAdjust = ['150', '175', '200', '175', '200'];
+
+    if (wWidth <= 550) {
+      leftAdjust.forEach( (l, i) => {
+        let iString = i + 1;
+        doc.gebi('caro-' + iString).style.left = '-' + l + 'px';
+      });
     }
   } else if (wWidth >= 1000) {
     for (var ht = 0; ht < homeTog.length; ht++) {
