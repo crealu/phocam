@@ -40,16 +40,59 @@ function toggleMenuBtn() {
 }
 
 function toggleMobileNav(menu, showing) {
-  let i = 0;
-  let id = setInterval(frame, 500);
+  let mobileLinks = doc.gebcn('nav-item-mobile');
+  let rate;
+  //showing ? menu.style.display = 'block': menu.style.opacity = '0';
+  showing ? menu.style.display = 'block': menu.style.height = '0px';
+  showing ? rate = 100: rate = 500;
 
-  showing ? menu.style.display = 'block': menu.style.opacity = '0';
+  if (!showing) {
+    doc.gebcn('media-item')[0].style.transition = '0.1s';
+    doc.gebcn('media-item')[0].style.opacity = '0';
+    doc.gebcn('media-item')[0].style.animation = '0';
+    for (var m = 0; m < mobileLinks.length; m++) {
+      mobileLinks[m].style.transition = '0.1s';
+      mobileLinks[m].style.opacity = '0';
+    }
+  }
+  //showing ? mobileLinks.forEach(m => {m.style.opacity = '0'}): let n = 0;
+
+  let id = setInterval(frame, rate);
+  let i = 0;
 
   function frame() {
     i++;
-    if (i == 1) {
-      clearInterval(id);
-      showing ? menu.style.opacity = '1': menu.style.display = 'none';
+    if (i >= 1 && i < 2) {
+      //showing ? menu.style.opacity = '1': menu.style.display = 'none';
+      showing ? menu.style.height = wHeight + 'px': menu.style.display = 'none';
+    }
+    if (showing) {
+      if (i >= 2 && i < 3) {
+        mobileLinks[0].style.opacity = '1';
+        mobileLinks[0].style.transform = 'scale(1) translateY(0px)';
+      } else if (i >= 3 && i < 4) {
+        mobileLinks[1].style.opacity = '1';
+        mobileLinks[1].style.transform = 'scale(1) translateY(0px)';
+      } else if (i >= 4 && i < 5) {
+        mobileLinks[2].style.opacity = '1';
+        mobileLinks[2].style.transform = 'scale(1) translateY(0px)';
+      } else if (i >= 5 && i < 6) {
+        mobileLinks[3].style.opacity = '1';
+        mobileLinks[3].style.transform = 'scale(1) translateY(0px)';
+      } else if (i >= 9 && i < 10) {
+        clearInterval(id);
+        //doc.gebcn('media-item')[0].style.opacity = '1';
+        //doc.gebcn('media-item')[0].style.transform = 'scale(1) translateX(0px)';
+        doc.gebcn('media-item')[0].style.animation = '0.5s var(--cb-bounce) 0s forwards media_bounce';
+      }
+    } else {
+        if (i >= 3) {
+          clearInterval(id);
+          for (var m = 0; m < mobileLinks.length; m++) {
+            mobileLinks[m].style.transform = 'scale(1.1) translateY(-20px)';
+            mobileLinks[m].style.transition = '0.5s ease opacity, 0.5s ease transform';
+          }
+        }
     }
   }
 }
@@ -122,18 +165,25 @@ function viewHomeImg(dot) {
   allDots[dot].style.background = '#6d6d6d';
 }
 
-function scrollTop() {
-  window.screenTop = 0;
-  console.log(window.screenTop);
+function lazyLoadHomeImgs() {
+  let waitImg = doc.gebcn('wait-img');
+  var id = setInterval(frame, 1000);
+  var i = 0;
+  function frame() {
+    i++;
+    if (i >= 3 && i <= 5) {
+      waitImg[0].style.display = 'block';
+    } else if (i >= 5 && i <= 6) {
+      waitImg[1].style.display = 'block';
+    } else if (i >= 6 && i <= 8) {
+      waitImg[2].style.display = 'block';
+    } else if (i >= 8 && i <= 10) {
+      waitImg[3].style.display = 'block';
+    }
+  }
 }
 
-function checkViewport() {
-  scrollTop();
-  let mediaWrapper = doc.gebcn('home-media-wrapper')[0];
-  mediaWrapper.style.height = wHeight + 'px';
-
-  lazyLoadHomeImgs();
-
+function checkResized() {
   let homeTog = doc.gebcn('home-img-tog');
   if (wWidth <= 1000 && wWidth >= 250) {
     let calculation = Math.abs( (wWidth - 1055) / 2.1 );
@@ -164,22 +214,12 @@ function checkViewport() {
   }
 }
 
-function lazyLoadHomeImgs() {
-  let waitImg = doc.gebcn('wait-img');
-  var id = setInterval(frame, 1000);
-  var i = 0;
-  function frame() {
-    i++;
-    if (i >= 3 && i <= 5) {
-      waitImg[0].style.display = 'block';
-    } else if (i >= 5 && i <= 6) {
-      waitImg[1].style.display = 'block';
-    } else if (i >= 6 && i <= 8) {
-      waitImg[2].style.display = 'block';
-    } else if (i >= 8 && i <= 10) {
-      waitImg[3].style.display = 'block';
-    }
-  }
+function windowLoaded() {
+  wind.scroll({ top: 0 });
+  let mediaWrapper = doc.gebcn('home-media-wrapper')[0];
+  mediaWrapper.style.height = wHeight + 'px';
+  lazyLoadHomeImgs();
+  checkResized();
 }
 
 function galleryModal(subgal) {
@@ -187,7 +227,6 @@ function galleryModal(subgal) {
   let img = subgal.children[0];
   let title = subgal.children[1];
   let para = img.id.replace('-main', '');
-  console.log(para);
 
   let modTitle = doc.gebcn('modal-title')[0];
   doc.clear(modTitle);
@@ -197,7 +236,7 @@ function galleryModal(subgal) {
   modImg.src = img.src;
 
   let galleryTexts = {
-    aerial: 'A sky as a canvas of viewpoints. Equiped with a DJI Mavic Pro, I enjoy capturing unique angles unable to be seen by the human eye.',
+    aerial: 'A sky as a canvas of viewpoints. Equipped with a DJI Mavic Pro, I enjoy capturing unique angles unable to be seen by the human eye.',
     architecture: 'The shape and design of buildings has always subtly captured my interest. Viewing urban structures through photography sheds light on the various styles of architecture that I find intriguing.',
     portrait: 'People and photography is a combination that I have only recently started to explore. As much as there is detail in a landscape, there is expression in a face.',
     night: 'Walking in the shadows, I see clearly walking in the light. Features of my nighttime perspectives include city lights, contrast, and the moon (thanks to a 210mm lens).',
@@ -207,7 +246,6 @@ function galleryModal(subgal) {
 
   let modText = doc.gebcn('modal-text')[0];
   modText.innerHTML =  galleryTexts[para];
-
   delayZoomShow(modal);
 }
 
@@ -232,24 +270,11 @@ function scrollToContent(content, fromMenu) {
     behavior: 'smooth'
   });
 
-/*
-  switch (content) {
-    case 'about':
-      wind.scrollY = 840;
-      break;
-    case 'gallery':
-      wind.scrollY = 1450;
-      break;
-    case 'services':
-      wind.scrollY = 5170;
-      break;
-  }*/
-
   let scrollPos = wind.scrollY;
   console.log(scrollPos);
 }
 
-window.addEventListener('resize', checkViewport);
+window.addEventListener('resize', checkResized);
 //window.addEventListener('scroll', scrollContent);
 
-window.onload = checkViewport();
+window.onload = windowLoaded();
