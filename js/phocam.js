@@ -81,12 +81,10 @@ function toggleMobileNav(menu, showing) {
         mobileLinks[3].style.transform = 'scale(1) translateY(0px)';
       } else if (i >= 9 && i < 10) {
         clearInterval(id);
-        //doc.gebcn('media-item')[0].style.opacity = '1';
-        //doc.gebcn('media-item')[0].style.transform = 'scale(1) translateX(0px)';
         doc.gebcn('media-item')[0].style.animation = '0.5s var(--cb-bounce) 0s forwards media_bounce';
       }
     } else {
-        if (i >= 3) {
+        if (i >= 2) {
           clearInterval(id);
           for (var m = 0; m < mobileLinks.length; m++) {
             mobileLinks[m].style.transform = 'scale(1.1) translateY(-20px)';
@@ -255,23 +253,23 @@ function closeModal() {
 }
 
 function scrollToContent(content, fromMenu) {
-  if (fromMenu) {
-    mobileMenu();
-  }
+  fromMenu ? mobileMenu() : null;
 
   let scrollLocation = {
-    about: 840,
-    gallery: 1400,
-    services: 5100
+    about: [840, 650],
+    gallery: [1400, 1100],
+    services: [5100, 2500]
   };
 
+  let vp;
+  wWidth <= 600 ? vp = 1: vp = 0;
+
   wind.scroll({
-    top: scrollLocation[content],
+    top: scrollLocation[content][vp],
     behavior: 'smooth'
   });
 
-  let scrollPos = wind.scrollY;
-  console.log(scrollPos);
+  console.log(scrollLocation[content]);
 }
 
 window.addEventListener('resize', checkResized);
