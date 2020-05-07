@@ -69,16 +69,16 @@
 	<div id="nav-mobile">
 		<ul class="nav-list-mobile">
 			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile"  onclick="displayContent('About')">About</a>
+				<a class="nav-link-mobile"  onclick="scrollToContent('about', true)">About</a>
 			</li>
 			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile" onclick="displayContent('Gallery')">Gallery</a>
+				<a class="nav-link-mobile" onclick="scrollToContent('gallery', true)">Gallery</a>
 			</li>
 			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile" onclick="displayContent('Services')">Services</a>
+				<a class="nav-link-mobile" onclick="scrollToContent('services', true)">Services</a>
 			</li>
 			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile" onclick="displayContent('Contact')">Contact</a>
+				<a class="nav-link-mobile">Contact</a>
 			</li>
 			<li class="nav-item-mobile">
 				<ul class="media-list">
@@ -183,10 +183,10 @@
 			</div>
 			<div class="footer-col">
 				<ul class="footer-info-list">
-					<li class="info-item">About</li>
-					<li class="info-item">Gallery</li>
-					<li class="info-item">Services</li>
-					<li class="info-item">Contact</li>
+					<li class="info-item" onclick="scrollToContent('about', false)">About</li>
+					<li class="info-item" onclick="scrollToContent('gallery', false)">Gallery</li>
+					<li class="info-item" onclick="scrollToContent('services', false)">Services</li>
+					<li class="info-item"><a href="" class="contact-header-link">Contact</a></li>
 				</ul>
 			</div>
 			<div class="footer-col final-footer-col">

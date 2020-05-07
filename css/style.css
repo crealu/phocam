@@ -2,6 +2,7 @@
 
 :root {
   --light-font: 100;
+  --main-font-color: #868686;
   --cb-1: cubic-bezier(.35,.05,.35,0.95);
   --font-1: 'Comfortaa';
   --anim-dur: 9s;
@@ -10,7 +11,7 @@
 body {
   position: relative;
   font-family: var(--font-1);
-  color: #868686;
+  color: var(--main-font-color);
   opacity: 1;
   margin: 0;
   padding: 0px;
@@ -43,7 +44,7 @@ body {
   position: relative;
   display: inline-block;
   float: left;
-  color: #676767;
+  color: var(--main-font-color);
   opacity: 0;
   left: -20px;
 }
@@ -83,65 +84,63 @@ body {
 #nav-mobile {
   position: absolute;
   display: none;
+  top: 0%;
   left: 0%;
   transition: 0.25s ease;
   width: 100%;
   height: 800px;
   background: white;
+  z-index: 150;
 }
 
 .nav-list-mobile {
   position: relative;
   margin: 0 auto;
-  width: 100%;
-  padding-left: 0px;
-  transition: 1s;
-  background: white;
-  transition: 0.5s;
-  text-align: center;
   top: 50px;
+  width: 100px;
+  padding: 0px;
+  transition: 0.5s;
   padding-inline-start: 0px;
+  list-style-type: none;
 }
 
 .nav-item-mobile {
-  list-style-type: none;
-  padding: 26px 0px 26px 0px;
-  border-top: 1px solid rgba(134, 134, 134, 0.5);
-  width: 50%;
   position: relative;
   display: block;
   margin: 0 auto;
+  padding: 26px 0px;
+  text-align: left;
 }
 
 .selector {
-  width: 70%;
+  width: 100%;
 }
 
 .nav-link-mobile {
-  color: #868686;
+  color: var(--main-font-color);
   padding: 4px;
   font-weight: 100;
   font-size: 24px;
   position: relative;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .media-list {
-  list-style-type: none;
-  padding: 0px;
-  width: 90%;
-  left: 0px;
   position: relative;
-  padding-inline-start: 0px;
   display: block;
   margin: 0 auto;
+  left: 0px;
+  width: 100%;
+  padding: 0px;
+  padding-inline-start: 0px;
+  list-style-type: none;
 }
 
 .media-list li {
-  display: inline-block;
   position: relative;
-  width: 16%;
-  padding: 0px 1% 0px 1%;
+  display: inline-block;
+  padding: 0px;
   text-align: center;
 }
 
@@ -742,7 +741,7 @@ body {
   width: 100%;
   height: 100%;
   background: white;
-  color: #535353;
+  color: var(--main-font-color);
   z-index: 150;
   overflow-x: scroll;
   transform: scale(0);
@@ -761,9 +760,10 @@ body {
   text-align: center;
   font-weight: 400;
   font-size: 14px;
-  color: #535353;
+  color: var(--main-font-color);
   background: #dedede;
   border-radius: 50%;
+  border: none;
   box-shadow: 0px 0px 10px #5d5d5d;
   cursor: pointer;
   z-index: 200;
@@ -784,7 +784,11 @@ body {
 
 .modal-text-wrapper {
   padding-top: 30px;
+}
+
+.modal-text {
   text-align: justify;
+  line-height: 30px;
 }
 
 .modal-img {

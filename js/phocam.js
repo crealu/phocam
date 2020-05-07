@@ -198,11 +198,11 @@ function galleryModal(subgal) {
 
   let galleryTexts = {
     aerial: 'A sky as a canvas of viewpoints. Equiped with a DJI Mavic Pro, I enjoy capturing unique angles unable to be seen by the human eye.',
-    architecture: 'The shape and design of buildings has always subtly captured my interest. Viewing urban infrastructure through photography sheds light on the various styles of architecture that I find intriguing.',
-    portrait: 'People and photography is a combination in which I have only recently started to explore. The moment seems to be simultaneously fleeting and revealing itself.',
-    night: 'Walking in the shadows, light is clearly visible. Features of my perspectives on the night include city lights, contrast, and the moon (thanks to a 210mm lens).',
+    architecture: 'The shape and design of buildings has always subtly captured my interest. Viewing urban structures through photography sheds light on the various styles of architecture that I find intriguing.',
+    portrait: 'People and photography is a combination that I have only recently started to explore. As much as there is detail in a landscape, there is expression in a face.',
+    night: 'Walking in the shadows, I see clearly walking in the light. Features of my nighttime perspectives include city lights, contrast, and the moon (thanks to a 210mm lens).',
     landscape: "As an adventurer, I view landscapes as sometimes having the ability to present an all-encompassing view. Whether that be physical, interpretive, or both, is up to the viewer.",
-    longexposure: 'Is light that the human eye can never naturally see ever actually seen? What I love about shooting long exposure is that it has more to do with imagination than what meets the eye.'
+    longexposure: 'Is light that the human eye can never naturally see ever actually seen? What I love about shooting long exposure is the amount of imagination that becomes more than what meets the eye.'
   }
 
   let modText = doc.gebcn('modal-text')[0];
@@ -216,6 +216,40 @@ function closeModal() {
   modal.style.transform = 'scale(0)';
 }
 
+function scrollToContent(content, fromMenu) {
+  if (fromMenu) {
+    mobileMenu();
+  }
+
+  let scrollLocation = {
+    about: 840,
+    gallery: 1400,
+    services: 5100
+  };
+
+  wind.scroll({
+    top: scrollLocation[content],
+    behavior: 'smooth'
+  });
+
+/*
+  switch (content) {
+    case 'about':
+      wind.scrollY = 840;
+      break;
+    case 'gallery':
+      wind.scrollY = 1450;
+      break;
+    case 'services':
+      wind.scrollY = 5170;
+      break;
+  }*/
+
+  let scrollPos = wind.scrollY;
+  console.log(scrollPos);
+}
+
 window.addEventListener('resize', checkViewport);
+//window.addEventListener('scroll', scrollContent);
 
 window.onload = checkViewport();
