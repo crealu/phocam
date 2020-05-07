@@ -87,7 +87,7 @@ function toggleMobileNav(menu, showing) {
         if (i >= 2) {
           clearInterval(id);
           for (var m = 0; m < mobileLinks.length; m++) {
-            mobileLinks[m].style.transform = 'scale(1.1) translateY(-20px)';
+            mobileLinks[m].style.transform = 'scale(1.1) translateY(-30px)';
             mobileLinks[m].style.transition = '0.5s ease opacity, 0.5s ease transform';
           }
         }
@@ -234,7 +234,7 @@ function galleryModal(subgal) {
   modImg.src = img.src;
 
   let galleryTexts = {
-    aerial: 'A sky as a canvas of viewpoints. Equipped with a DJI Mavic Pro, I enjoy capturing unique angles unable to be seen by the human eye.',
+    aerial: 'A sky as a canvas of viewpoints. Equipped with a DJI Mavic Pro, I enjoy capturing unique angles unable from above',
     architecture: 'The shape and design of buildings has always subtly captured my interest. Viewing urban structures through photography sheds light on the various styles of architecture that I find intriguing.',
     portrait: 'People and photography is a combination that I have only recently started to explore. As much as there is detail in a landscape, there is expression in a face.',
     night: 'Walking in the shadows, I see clearly walking in the light. Features of my nighttime perspectives include city lights, contrast, and the moon (thanks to a 210mm lens).',

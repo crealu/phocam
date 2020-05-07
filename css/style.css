@@ -111,7 +111,7 @@ body {
   padding: 26px 0px;
   text-align: left;
   opacity: 0;
-  transform: scale(1.1) translateY(-20px);
+  transform: scale(1.1) translateY(-30px);
   transition: 0.5s ease opacity, 0.5s ease transform;
 }
 
