@@ -234,12 +234,12 @@ function galleryModal(subgal) {
   modImg.src = img.src;
 
   let galleryTexts = {
-    aerial: 'A sky as a canvas of viewpoints. Equipped with a DJI Mavic Pro, I enjoy capturing unique angles unable from above',
+    aerial: 'A sky as a canvas of viewpoints. Equipped with a DJI Mavic Pro, I enjoy capturing unique angles from above.',
     architecture: 'The shape and design of buildings has always subtly captured my interest. Viewing urban structures through photography sheds light on the various styles of architecture that I find intriguing.',
-    portrait: 'People and photography is a combination that I have only recently started to explore. As much as there is detail in a landscape, there is expression in a face.',
+    portrait: 'People and photography is a combination that I have only recently started to explore. As much as there is detail in a landscape, there can be expression in a face.',
     night: 'Walking in the shadows, I see clearly walking in the light. Features of my nighttime perspectives include city lights, contrast, and the moon (thanks to a 210mm lens).',
     landscape: "As an adventurer, I view landscapes as sometimes having the ability to present an all-encompassing view. Whether that be physical, interpretive, or both, is up to the viewer.",
-    longexposure: 'Is light that the human eye can never naturally see ever actually seen? What I love about shooting long exposure is the amount of imagination that becomes more than what meets the eye.'
+    longexposure: 'Is light that the human eye can never naturally see ever actually seen? What I love about shooting long exposure is the amount of imagination that goes into each shot.'
   }
 
   let modText = doc.gebcn('modal-text')[0];
