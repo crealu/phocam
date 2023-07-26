@@ -1,9 +1,8 @@
-const wind = window;
-const wWidth = wind.innerWidth;
-const wHeight = wind.innerHeight;
+let mobileNav = document.getElementById('nav-mobile');
+let bars = document.getElementsByClassName('bar');
+let navBtn = document.getElementById('nav-btn');
 
 function mobileMenu() {
-  let mobileNav = doc.gebi('nav-mobile');
   if (!(mobileNav.style.display == 'block')) {
     toggleMenuBtn();
     toggleMobileNav(mobileNav, true);
@@ -14,9 +13,6 @@ function mobileMenu() {
 }
 
 function toggleMenuBtn() {
-  let bars = doc.gebcn('bar');
-  let navBtn = doc.gebi('nav-btn');
-
   if (bars[2].style.opacity == '0') {
     bars[0].style.transform = 'rotate(0deg)';
     bars[0].style.top = '0px';
@@ -26,7 +22,6 @@ function toggleMenuBtn() {
     bars[1].style.background = '#676767';
     bars[2].style.opacity = '1';
     bars[2].style.background = '#676767';
-
   } else {
       bars[0].style.transform = 'rotate(45deg)';
       bars[0].style.top = '5px';
@@ -40,22 +35,22 @@ function toggleMenuBtn() {
 }
 
 function toggleMobileNav(menu, showing) {
-  let mobileLinks = doc.gebcn('nav-item-mobile');
-  let rate;
-  //showing ? menu.style.display = 'block': menu.style.opacity = '0';
-  showing ? menu.style.display = 'block': menu.style.height = '0px';
-  showing ? rate = 100: rate = 500;
+  let mobileLinks = document.getElementsByClassName('nav-item-mobile');
+  menu.style.display = showing ? 'block' : 'none';
+  menu.style.height = !showing ? '0px' : 'auto';
+  let rate = showing ? 100 : 500;
+  // showing ? menu.style.display = 'block': menu.style.height = '0px';
+  // showing ? rate = 100: rate = 500;
 
   if (!showing) {
-    doc.gebcn('media-item')[0].style.transition = '0.1s';
-    doc.gebcn('media-item')[0].style.opacity = '0';
-    doc.gebcn('media-item')[0].style.animation = '0';
+    document.getElementsByClassName('media-item')[0].style.transition = '0.1s';
+    document.getElementsByClassName('media-item')[0].style.opacity = '0';
+    document.getElementsByClassName('media-item')[0].style.animation = '0';
     for (var m = 0; m < mobileLinks.length; m++) {
       mobileLinks[m].style.transition = '0.1s';
       mobileLinks[m].style.opacity = '0';
     }
   }
-  //showing ? mobileLinks.forEach(m => {m.style.opacity = '0'}): let n = 0;
 
   let id = setInterval(frame, rate);
   let i = 0;
@@ -63,8 +58,7 @@ function toggleMobileNav(menu, showing) {
   function frame() {
     i++;
     if (i >= 1 && i < 2) {
-      //showing ? menu.style.opacity = '1': menu.style.display = 'none';
-      showing ? menu.style.height = wHeight + 'px': menu.style.display = 'none';
+      showing ? menu.style.height = window.innnerHeight + 'px': menu.style.display = 'none';
     }
     if (showing) {
       if (i >= 2 && i < 3) {
@@ -81,7 +75,7 @@ function toggleMobileNav(menu, showing) {
         mobileLinks[3].style.transform = 'scale(1) translateY(0px)';
       } else if (i >= 9 && i < 10) {
         clearInterval(id);
-        doc.gebcn('media-item')[0].style.animation = '0.5s var(--cb-bounce) 0s forwards media_bounce';
+        document.getElementsByClassName('media-item')[0].style.animation = '0.5s var(--cb-bounce) 0s forwards media_bounce';
       }
     } else {
         if (i >= 2) {
@@ -96,8 +90,8 @@ function toggleMobileNav(menu, showing) {
 }
 
 function showHome() {
-  doc.gebcn('click-arrow-wrapper')[0].style.animation = 'none';
-  doc.gebcn('click-arrow-wrapper')[0].style.transition = '0.5s ease';
+  document.getElementsByClassName('click-arrow-wrapper')[0].style.animation = 'none';
+  document.getElementsByClassName('click-arrow-wrapper')[0].style.transition = '0.5s ease';
 
   let openingClasses = [
     'opening-logo-wrapper',
@@ -106,15 +100,15 @@ function showHome() {
   ];
 
   openingClasses.forEach( c => {
-    doc.gebcn(c)[0].style.opacity = '0';
+    document.getElementsByClassName(c)[0].style.opacity = '0';
   });
 
-  let nav = doc.gebcn('nav-container')[0];
-  let carousel = doc.gebcn('home-carousel-wrapper')[0];
-  let homeMedia = doc.gebcn('home-media-wrapper')[0];
-  let openingWrapper = doc.gebcn('opening-wrapper')[0];
-  let caroDots = doc.gebcn('home-carousel-dots')[0];
-  let topics = doc.gebcn('topic-content');
+  let nav = document.getElementsByClassName('nav-container')[0];
+  let carousel = document.getElementsByClassName('home-carousel-wrapper')[0];
+  let homeMedia = document.getElementsByClassName('home-media-wrapper')[0];
+  let openingWrapper = document.getElementsByClassName('opening-wrapper')[0];
+  let caroDots = document.getElementsByClassName('home-carousel-dots')[0];
+  let topics = document.getElementsByClassName('topic-content');
 
   homeMedia.style.transition = '1s';
   caroDots.style.display = 'block';
@@ -138,7 +132,7 @@ function showHome() {
       homeMedia.style.top = '0px';
       carousel.style.width = '90%';
       caroDots.style.opacity = '1';
-      if (wWidth <= 500) {
+      if (window.innnerWidth <= 500) {
         carousel.style.height = '400px';
         homeMedia.style.height = '500px';
       } else {
@@ -149,8 +143,8 @@ function showHome() {
 }
 
 function viewHomeImg(dot) {
-  let homeImgs = doc.gebcn('home-img-tog');
-  let allDots = doc.gebcn('caro-dot');
+  let homeImgs = document.getElementsByClassName('home-img-tog');
+  let allDots = document.getElementsByClassName('caro-dot');
 
   for (var h = 0; h < homeImgs.length; h++) {
     homeImgs[h].style.zIndex = '40';
@@ -164,7 +158,7 @@ function viewHomeImg(dot) {
 }
 
 function lazyLoadHomeImgs() {
-  let waitImg = doc.gebcn('wait-img');
+  let waitImg = document.getElementsByClassName('wait-img');
   var id = setInterval(frame, 1000);
   var i = 0;
   function frame() {
@@ -181,56 +175,21 @@ function lazyLoadHomeImgs() {
   }
 }
 
-function checkResized() {
-  let homeTog = doc.gebcn('home-img-tog');
-  if (wWidth <= 1000 && wWidth >= 250) {
-    let calculation = Math.abs( (wWidth - 1055) / 2.1 );
-    let homeTogLeft = '-' + 0 + calculation + 'px';
 
-    for (var ht = 0; ht < homeTog.length; ht++) {
-      homeTog[ht].style.height = '100%';
-      homeTog[ht].style.width = 'auto';
-    }
 
-    let leftAdjust = ['150', '175', '200', '175', '200'];
 
-    if (wWidth <= 550) {
-      leftAdjust.forEach( (l, i) => {
-        let iString = i + 1;
-        doc.gebi('caro-' + iString).style.left = '-' + l + 'px';
-      });
-    }
-  } else if (wWidth >= 1000) {
-    for (var ht = 0; ht < homeTog.length; ht++) {
-      homeTog[ht].style.width = '100%';
-      homeTog[ht].style.height = 'auto';
-    }
-  }
-
-  if (wWidth > 1000) {
-    homeTog[3].style.top = '40px';
-  }
-}
-
-function windowLoaded() {
-  wind.scroll({ top: 0 });
-  let mediaWrapper = doc.gebcn('home-media-wrapper')[0];
-  mediaWrapper.style.height = wHeight + 'px';
-  lazyLoadHomeImgs();
-  checkResized();
-}
 
 function galleryModal(subgal) {
-  let modal = doc.gebi('modal');
+  let modal = document.getElementById('modal');
   let img = subgal.children[0];
   let title = subgal.children[1];
   let para = img.id.replace('-main', '');
 
-  let modTitle = doc.gebcn('modal-title')[0];
-  doc.clear(modTitle);
+  let modTitle = document.getElementsByClassName('modal-title')[0];
+  clear(modTitle);
   modTitle.innerHTML = title.textContent;
 
-  let modImg = doc.gebcn('modal-img')[0];
+  let modImg = document.getElementsByClassName('modal-img')[0];
   modImg.src = img.src;
 
   let galleryTexts = {
@@ -242,18 +201,21 @@ function galleryModal(subgal) {
     longexposure: 'Is light that the human eye can never naturally see ever actually seen? What I love about shooting long exposure is the amount of imagination that goes into each shot.'
   }
 
-  let modText = doc.gebcn('modal-text')[0];
+  let modText = document.getElementsByClassName('modal-text')[0];
   modText.innerHTML =  galleryTexts[para];
   delayZoomShow(modal);
 }
 
 function closeModal() {
-  let modal = doc.gebi('modal');
+  let modal = document.getElementById('modal');
   modal.style.transform = 'scale(0)';
 }
 
 function scrollToContent(content, fromMenu) {
-  fromMenu ? mobileMenu() : null;
+  if (fromMenu) {
+    mobileMenu();
+  }
+  // fromMenu ? mobileMenu() : null;
 
   let scrollLocation = {
     about: [840, 650],
@@ -261,10 +223,10 @@ function scrollToContent(content, fromMenu) {
     services: [5100, 2500]
   };
 
-  let vp;
-  wWidth <= 600 ? vp = 1: vp = 0;
+  let vp = window.innerWidth <= 600 ? 1 : 0;
+  // window.innnerWidth <= 600 ? vp = 1: vp = 0;
 
-  wind.scroll({
+  window.scroll({
     top: scrollLocation[content][vp],
     behavior: 'smooth'
   });
@@ -272,7 +234,47 @@ function scrollToContent(content, fromMenu) {
   console.log(scrollLocation[content]);
 }
 
-window.addEventListener('resize', checkResized);
-//window.addEventListener('scroll', scrollContent);
+function checkResized() {
+  let homeTog = document.getElementsByClassName('home-img-tog');
+  
+  if (window.innnerWidth <= 1000 && window.innnerWidth >= 250) {
+    let calculation = Math.abs( (window.innnerWidth - 1055) / 2.1 );
+    let homeTogLeft = '-' + 0 + calculation + 'px';
 
-window.onload = windowLoaded();
+    for (var ht = 0; ht < homeTog.length; ht++) {
+      homeTog[ht].style.height = '100%';
+      homeTog[ht].style.width = 'auto';
+    }
+
+    let leftAdjust = ['150', '175', '200', '175', '200'];
+
+    if (window.innnerWidth <= 550) {
+      leftAdjust.forEach( (l, i) => {
+        let iString = i + 1;
+        document.getElementById('caro-' + iString).style.left = '-' + l + 'px';
+      });
+    }
+  } else if (window.innnerWidth >= 1000) {
+    for (var ht = 0; ht < homeTog.length; ht++) {
+      homeTog[ht].style.width = '100%';
+      homeTog[ht].style.height = 'auto';
+    }
+  }
+
+  if (window.innnerWidth > 1000) {
+    homeTog[3].style.top = '40px';
+  }
+}
+
+
+function windowLoaded() {
+  window.scroll({ top: 0 });
+  let mediaWrapper = document.getElementsByClassName('home-media-wrapper')[0];
+  mediaWrapper.style.height = window.innnerHeight + 'px';
+  lazyLoadHomeImgs();
+  checkResized();
+}
+
+window.addEventListener('resize', checkResized);
+window.addEventListener('load', windowLoaded);
+// window.onload = windowLoaded();

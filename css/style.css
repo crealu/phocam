@@ -1,13 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:wght@300;515|Pacifico|Gudea|Rajdhani:500|Courgette|Domine|Nunito|Baloo+Bhai+2&display=swap');
-
-:root {
-  --font-1: 'Comfortaa';
-  --light-font: 100;
-  --main-font-color: #868686;
-  --cb-1: cubic-bezier(.35,.05,.35,0.95);
-  --cb-bounce: cubic-bezier(.23,.13,.27,1.24);
-  --anim-dur: 9s;
-}
 
 body {
   position: relative;
