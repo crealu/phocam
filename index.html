@@ -1,225 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Phocam</title>
-	<link rel="icon" type="image/png" sizes="310x310" href="img/logo-310x310.png">
-  <link href="css/camstrap.css" rel="stylesheet" type="text/css">
-	<link href="css/style.css" rel="stylesheet" type="text/css">
-	<link href="css/mobil.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phocam</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="./css/mobile.css"/>
+  <link rel="icon" type="image/svg" sizes="310x310" href="img/logo/Phocam White.svg">
 </head>
-
 <body>
-	<div class="nav-container">
-		<div class="nav-logo-wrapper">
+  <header>
+    <div class="logo">
 			<a href="">
-				<img class="nav-logo" src="img/phocam logo.svg"/>
-				<p class="phocam-nav-text">phocam</p>
-			</a>
-		</div>
-		<div id="nav-btn" onclick="mobileMenu()">
-			<div class="bar bar1"></div>
-			<div class="bar bar2"></div>
-			<div class='bar bar3'></div>
-		</div>
-	</div>
-
-	<div class="opening-wrapper">
-		<div class="opening-logo-wrapper">
-			<svg class="phocam-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76.67 86.63">
-				<defs></defs>
-				<g id="Layer_2" data-name="Layer 2">
-					<g id="Layer_1-2" data-name="Layer 1">
-						<path class="cls-1" d="M38.34,43.33a23.73,23.73,0,1,0,0,38.15"/>
-						<path class="cls-1" d="M38.34,43.3a23.73,23.73,0,1,0,0-38.15"/>
-						<path class="cls-1" d="M38.34,5.15V62.41"/>
-					</g>
-				</g>
-			</svg>
-		</div>
-		<div class="opening-text-wrapper">
-			<p class="phocam-text">PHOCAM</p>
-		</div>
-		<div class="click-arrow-wrapper" onclick="showHome()">
-			<img class="click-arrow" src="img/down arrow.svg"/>
-		</div>
-	</div>
-
-	<div class="home-media-wrapper">
-		<div class="home-carousel-wrapper">
-			<img id="caro-1" class="home-img-tog" src="img/photos/whole pier.jpg"/>
-			<img id="caro-2" class="wait-img home-img-tog" src="img/photos/mirror set.jpg"/>
-			<img id="caro-3" class="wait-img home-img-tog" src="img/photos/west shinjuku.jpg"/>
-			<img id="caro-4" class="wait-img home-img-tog" src="img/photos/kawaguchiko full.jpg"/>
-			<img id="caro-5" class="wait-img home-img-tog" src="img/photos/berkeley.jpg"/>
+        <img class="logo-img" src="./img/logo/Phocam White.svg" />
+      </a>
 		</div>
 
-		<div class="home-carousel-dots">
-			<ul class="dots-list">
-				<li class="caro-dot active-dot" data-dotnum="0" onclick="viewHomeImg(0)"></li>
-				<li class="caro-dot" data-dotnum="1" onclick="viewHomeImg(1)"></li>
-				<li class="caro-dot" data-dotnum="2" onclick="viewHomeImg(2)"></li>
-				<li class="caro-dot" data-dotnum="3" onclick="viewHomeImg(3)"></li>
-				<li class="caro-dot" data-dotnum="4" onclick="viewHomeImg(4)"></li>
-			</ul>
-		</div>
-	</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#gallery">Portfolio</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-	<div id="nav-mobile">
-		<ul class="nav-list-mobile">
-			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile"  onclick="scrollToContent('about', true)">About</a>
-			</li>
-			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile" onclick="scrollToContent('gallery', true)">Gallery</a>
-			</li>
-			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile" onclick="scrollToContent('services', true)">Services</a>
-			</li>
-			<li class="nav-item-mobile selector">
-				<a class="nav-link-mobile">Contact</a>
-			</li>
-			<li class="nav-item-mobile media-item">
-				<ul class="media-list">
-					<li>
-						<a href="https://www.instagram.com/phocamm/" target="_blank">
-							<img src="https://s-media-cache-ak0.pinimg.com/originals/e9/5e/3b/e95e3b25509d467e5698290b1427135d.png" class="social-img ig-img" id="ig-mobile"/>
-						</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+    <div id="burger">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class='bar bar3'></div>
+    </div>
+  </header>
 
-	<div class="topic-content" id="about-content">
-		<h3 class="topic-title">Phocam</h3>
-		<div class="about-para-wrapper">
-			<p class="about-para">Expression through photography and videography.
-				Originally started as a photojournalism project for aerial photography in 2017, Phocam (previously Photaero) has developed into a brand that focuses on visual arts and content creation.
-				Cinematography becomes the theme of video projects that incorporate in-house music pieces. Various photography styles like portrait, night, and architecture are areas of growing expertise.
-				As these works satisfy a creative drive, the primary goal of Phocam is to share interesting ideas and collaborate on creative projects.
-				It is a brand that ultimately seeks to provide value to collaborators, and perspective through visual art.
-			</p>
-		</div>
-	</div>
+  <div id="nav-mobile">
+    <ul class="nav-list-mobile">
+      <li class="nav-item-mobile selector">
+        <a class="nav-link-mobile" href="#services">Services</a>
+      </li>
+      <li class="nav-item-mobile selector">
+        <a class="nav-link-mobile" href="#gallery">Portfolio</a>
+      </li>
+      <li class="nav-item-mobile selector">
+        <a class="nav-link-mobile" href="#testimonials">Testimonials</a>
+      </li>
+      <li class="nav-item-mobile selector">
+        <a class="nav-link-mobile" href="#about">About</a>
+      </li>
+      <li class="nav-item-mobile selector">
+        <a class="nav-link-mobile" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </div>
 
-	<div class="topic-content" id="gallery-content">
-		<h3 class="topic-title">Gallery</h3>
-		<div class="gallery-row">
-			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
-				<img class="gallery-main-img" id="aerial-main" data-name="biz" src="img/photos/gallerymain/nagatoro.jpg"/>
-				<p class="gallery-title">Aerial</p>
-			</div>
-		</div>
-		<div class="gallery-row">
-			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
-				<img class="gallery-main-img" id="architecture-main" data-name="cork-house" src="img/photos/gallerymain/cork.jpg"/>
-				<p class="gallery-title">Architecture</p>
-			</div>
-		</div>
-		<div class="gallery-row">
-			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
-				<img class="gallery-main-img" id="portrait-main" data-name="chin" src="img/photos/gallerymain/marcin.jpg"/>
-				<p class="gallery-title">Portrait</p>
-			</div>
-		</div>
-		<div class="gallery-row">
-			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
-				<img class="gallery-main-img" id="night-main" data-name="moon" src="img/photos/gallerymain/moon.jpg"/>
-				<p class="gallery-title">Night</p>
-			</div>
-		</div>
-		<div class="gallery-row">
-			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
-				<img class="gallery-main-img" id="landscape-main" data-name="nikko" src="img/photos/gallerymain/nikko.jpg"/>
-				<p class="gallery-title">Landscape</p>
-			</div>
-		</div>
-		<div class="gallery-row">
-			<div class="gallery-img-wrapper" onclick="galleryModal(this)">
-				<img class="gallery-main-img" id="longexposure-main" data-name="yoyogi" src="img/photos/gallerymain/yoyogi.jpg"/>
-				<p class="gallery-title">Long Exposure</p>
-			</div>
-		</div>
-	</div>
+<!-- 
+  <section class="hero">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="your-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Precision Drone Piloting Services</h1>
+      <p>Creative, Real Estate, and Environmental Aerial Solutions</p>
+      <a href="#contact" class="btn">Book a Flight</a>
+    </div>
+  </section> -->
 
-	<div class="topic-content" id="services-content">
-		<h3 class="topic-title">Services</h3>
-		<div class="services-wrapper">
-			<div class="services-left s-col">
-				<ul class="services-list">
-					<li class="services-item">High Resolution Photos</li>
-					<li class="services-item">Portrait Photography</li>
-					<li class="services-item">Aerial Photography</li>
-					<li class="services-item">Post Production</li>
-					<li class="services-item">Quality 4k Video</li>
-					<li class="services-item">Video Editing</li>
-				</ul>
-			</div>
-			<div class="services-middle s-col">
-				<ul class="services-list">
-					<li class="services-item">Creative Direction</li>
-					<li class="services-item">Content Creation</li>
-					<li class="services-item">Content Writing</li>
-					<li class="services-item">Music Composition</li>
-					<li class="services-item">Custom Graphics</li>
-					<li class="services-item">Digital Media</li>
-				</ul>
-			</div>
-			<div class="services-right s-col">
+	<section class="hero-parallax" id="hero">
+	  <div class="hero-content">
+	    <h1>Drone Piloting Services</h1>
+	    <p>Effective Aerial Solutions</p>
+	    <!-- <p>Creative, Real Estate, and Environmental Aerial Solutions</p> -->
+	    <a href="#contact" class="btn">Book</a>
+	  </div>
+	</section>
 
-			</div>
-		</div>
-	</div>
+  <section id="services" class="services">
+    <h2>Services</h2>
+    <div class="service-grid">
+      <div class="service">
+        <h3>Real Estate</h3>
+        <p>High-quality images and video to showcase residential and commercial properties from compelling angles.</p>
+      </div>
+      <div class="service">
+        <h3>Creative</h3>
+        <p>Bring your vision to life with cinematic drone shots for music videos, events, documentaries, and social media.</p>
+      </div>
+      <div class="service">
+        <h3>Environment</h3>
+        <p>Capture wide-area views for environmental monitoring, site inspections, mapping, and land surveys.</p>
+      </div>
+    </div>
+  </section>
 
-	<div class="topic-content" id="footer">
-		<div class="footer-inner">
-			<div class="footer-col">
-				<div class="footer-logo-wrapper">
-					<img class="footer-logo" src="img/phocam logo white.svg"/>
-					<p class="footer-phocam">PHOCAM</p>
-				</div>
-			</div>
-			<div class="footer-col">
-				<ul class="footer-info-list">
-					<li class="footer-nav-item" onclick="scrollToContent('about', false)">About</li>
-					<li class="footer-nav-item" onclick="scrollToContent('gallery', false)">Gallery</li>
-					<li class="footer-nav-item" onclick="scrollToContent('services', false)">Services</li>
-					<li class="footer-nav-item"><a href="" class="footer-contact-link">Contact</a></li>
-				</ul>
-			</div>
-			<div class="footer-col final-footer-col">
-				<div class="media-connect">
-					<h3 class="media-connect-title">Connect</h3>
-					<a href="https://www.instagram.com/phocamm/" target="_blank" class="ig-link">
-						<img src="https://s-media-cache-ak0.pinimg.com/originals/e9/5e/3b/e95e3b25509d467e5698290b1427135d.png" alt="ig-logo" class="ig-img"/>
-					</a>
-				</div>
-				<div class="language-select">
-					<ul class="language-list">
-						<li class="lang-item">JP /</li>
-						<li class="lang-item">EN</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+  <section id="gallery" class="gallery">
+    <h2>Portfolio</h2>
+    <div class="images">
+      <img src="./img/aerial/Okinawa.jpg" alt="Drone view 1">
+      <img src="./img/aerial/Venice.jpg" alt="Drone view 2">
+      <img src="./img/aerial/Nikko.jpg" alt="Drone view 3">
+      <img src="./img/aerial/Kawaguchiko.jpg" alt="Drone view 4">
+    </div>
 
-	<div class="gallery-modal" id="modal">
-		<button id="close" onclick="closeModal()">X</button>
-		<div id="modal-inner">
-			<h3 class="modal-title"></h3>
-			<div class="modal-img-wrapper">
-				<img class="modal-img" src=""/>
-			</div>
-			<div class="modal-text-wrapper">
-				<p class="modal-text"></p>
-			</div>
-		</div>
-	</div>
+<!--     <div class="carousel-wrapper">
+      <img class="active-img carousel-img" src="./img/aerial/Cork.jpg" alt="Drone view 1">
+      <img class="carousel-img" src="./img/aerial/Venice.jpg" alt="Drone view 2">
+      <img class="carousel-img" src="./img/aerial/Nikko.jpg" alt="Drone view 3">
+    </div>
 
-	<script type="text/javascript" src="js/help.js"></script>
-  <script type="text/javascript" src="js/phocam.js"></script>
+    <div class="carousel-dots">
+      <ul class="dots-list">
+        <li class="caro-dot active-dot" data-dotnum="0" onclick="viewHomeImg(0)"></li>
+        <li class="caro-dot" data-dotnum="1" onclick="viewHomeImg(1)"></li>
+        <li class="caro-dot" data-dotnum="2" onclick="viewHomeImg(2)"></li>
+        <li class="caro-dot" data-dotnum="3" onclick="viewHomeImg(3)"></li>
+        <li class="caro-dot" data-dotnum="4" onclick="viewHomeImg(4)"></li>
+      </ul>
+    </div> -->
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>What Clients Are Saying</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>"Incredible drone shots that helped our property listing stand out online. Sold within days!"</p>
+        <h4>– Amanda R., Real Estate Agent</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Brought our music video to life. Super easy to work with and highly creative."</p>
+        <h4>– J. Gomez, Musician</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Helped us monitor floodplain restoration from above—crystal-clear images and on-time delivery."</p>
+        <h4>– Dr. Lee, Environmental Scientist</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>Pilot</h2>
+    <img src="img/controller.png" />
+    <p>I'm Cam, a certified drone pilot passionate about capturing aerial stories that matter. With years of experience in creative direction, real estate media, and landscape photography, I produce and deliver content that is cinematic, informative, and always FAA-compliant.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact / Booking</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Tell me about your project..." rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="">
+          <img class="footer-logo" src="./img/logo/Phocam White.svg" />
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <a class="footer-link" href="#services">Services</a>
+        <a class="footer-link" href="#gallery">Portfolio</a>
+        <a class="footer-link" href="#testimonials">Testimonials</a>
+        <a class="footer-link" href="#about">About</a>
+        <a class="footer-link" href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <a class="ig-link" href="https://www.instagram.com/phocamm/" target="_blank">
+          <img  class="ig-img" src="https://s-media-cache-ak0.pinimg.com/originals/e9/5e/3b/e95e3b25509d467e5698290b1427135d.png" alt="ig-logo"/>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
 </body>
 </html>
