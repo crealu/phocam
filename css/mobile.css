@@ -107,6 +107,10 @@
 		display: none;
 	}
 
+  .about p {
+    width: 90%;
+  }
+
   .footer-inner {
     flex-direction: column;
   }
@@ -116,4 +120,6 @@
     flex-direction: column;
     margin-top: 30px;
   }
+
+
 }

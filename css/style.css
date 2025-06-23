@@ -3,7 +3,7 @@
 :root {
   --btn-bg-1: #00bcd4;
   --btn-bg-2: black;
-  --btn-bg-3: rgba(0, 0, 0, 0.7);
+  --btn-bg-3: rgba(0, 0, 0, 0.8);
   --main-background-1: #f9f9f9;
   --font-1: 'Barlow';
 }
@@ -307,7 +307,12 @@ section h2 {
 }
 
 .about p {
+  position: relative;
+  display: block;
+  margin: 0 auto;
   margin-top: 30px;
+  max-width: 400px;
+  text-align: center;
 }
 
 .contact form {
