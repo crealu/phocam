@@ -3,6 +3,7 @@ let bars = document.getElementsByClassName('bar');
 let mobileNav = document.getElementById('nav-mobile');
 let mobileList = document.getElementsByClassName('nav-list-mobile')[0];
 let mobileLinks = document.getElementsByClassName('nav-item-mobile');
+let submitBtn = document.getElementById('submit-btn');
 
 let state = {
   menuOpen: false
@@ -129,4 +130,32 @@ function handleLoad() {
   }
 }
 
+async function handleSubmit(event) {
+  event.preventDefault();
+  
+  let name = document.getElementsByClassName('name-input')[0].value;
+  let email = document.getElementsByClassName('email-input')[0].value;
+  let message = document.getElementsByClassName('message-input')[0].value;
+  
+  let data = {
+    name: name,
+    email: email,
+    message: message
+  }
+
+  console.log(data);
+
+  const options = {
+    method: 'post',
+    headers: {'Content-Type': 'application/json'},    
+    body: JSON.stringify(data)
+  }
+
+  await fetch('', options)
+    .then(res => res.json())
+    .then(data => { console.log(data) })
+    .catch(err => { console.log(err) })
+}
+
+submitBtn.addEventListener('click', handleSubmit);
 window.addEventListener('load', handleLoad);
