@@ -132,7 +132,7 @@ function handleLoad() {
 
 async function handleSubmit(event) {
   event.preventDefault();
-  
+
   let name = document.getElementsByClassName('name-input')[0].value;
   let email = document.getElementsByClassName('email-input')[0].value;
   let message = document.getElementsByClassName('message-input')[0].value;
@@ -151,7 +151,7 @@ async function handleSubmit(event) {
     body: JSON.stringify(data)
   }
 
-  await fetch('', options)
+  await fetch('https://phocam-mail-737252cd3924.herokuapp.com/send-email', options)
     .then(res => res.json())
     .then(data => { console.log(data) })
     .catch(err => { console.log(err) })
